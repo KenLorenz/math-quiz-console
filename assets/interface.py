@@ -29,6 +29,7 @@ def start_menu():
 def start_game_menu():
     settings = loadJSON()
     score = [0,0] # correct, wrong
+    print("Game Started! type 'exit' to exit.")
     
     for x in range (1,settings['numItems']+1):
         num1, num2 = randomize_quiz(settings['level'],settings['op']) # the question
@@ -36,16 +37,28 @@ def start_game_menu():
         
         choices = randomize_options(true_answer, settings['ansVariety'])
         
+        
+        
         print("\n-- Question --\n")
         print(f"{num1} {get_op_str(settings['op'])} {num2} = ?")
         
-        answer = user_input()
-        
+        print("Choices: ")
+        for x in choices:
+            print(f"-- {x} --")
+            
+        while True:
+            answer = user_input()
+            if(answer == "exit"):
+                game_end(score[0], score[1])
+                return
+            elif (int(answer) in choices):
+                break
+            else:
+                print('\nUnknown Input')
+           
         score = verify_answer(answer, true_answer, score)
         
-    print("\nGame End!\n")
-    print("Final Score:")
-    print(f"Correct: {score[0]}\nWrong: {score[1]}")
+    game_end(score[0], score[1])
 
 def custom_level():
     while True:
