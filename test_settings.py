@@ -7,6 +7,6 @@ class SettingsTestCase(unittest.TestCase):
     
     def test_loadJSON(self):
         
-        x = loadJSON
+        x = loadJSON()
         
-        self.assertEqual(type({1:1}, type(x)))
+        self.assertEqual(type({1:1}), type(x))

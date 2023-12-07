@@ -9,7 +9,7 @@ class GameMechanicsTestCase(unittest.TestCase):
         
         x, y = randomize_quiz({"1":"1-10"})
         
-        limit = [v for v in range(1-11)]
+        limit = [v for v in range(1, 11)]
         if(x in limit and y in limit):
             z = True
         else:
@@ -27,7 +27,7 @@ class GameMechanicsTestCase(unittest.TestCase):
         
         x = get_answer(10,5,2)
         
-        self.assertEqual(x,10)
+        self.assertEqual(x,5)
         
     def test_get_answer_mul(self):
         
