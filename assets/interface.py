@@ -37,8 +37,6 @@ def start_game_menu():
         
         choices = randomize_options(true_answer, settings['ansVariety'])
         
-        
-        
         print("\n-- Question --\n")
         print(f"{num1} {get_op_str(settings['op'])} {num2} = ?")
         
