@@ -1,4 +1,5 @@
 from assets.settings import *
+from assets.game_mechanics import *
 
 # game's main interfaces.
 
