@@ -14,7 +14,7 @@ def randomize_options(true_answer, ansVariety): # returns 4 options in a list an
     
     return ans_list
 
-def randomize_quiz(level, op):
+def randomize_quiz(level):
     level = level[list(level.keys())[0]]
     
     level_range = (level.split("-"))
